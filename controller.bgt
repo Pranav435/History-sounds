@@ -1,0 +1,16 @@
+void main()
+{
+show_game_window("Test");
+string data;
+file reader;
+reader.open("pirates.wav","rb");
+data=reader.read();
+reader.close();
+sound test;
+test.load_from_memory(data);
+test.play_looped();
+while(test.playing)
+{
+wait(5);
+}
+}
